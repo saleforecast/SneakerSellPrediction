@@ -1,0 +1,12 @@
+name: SneakerSellPrediction
+title: SneakerSellPrediction
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10065092
+bundleId: 7755558
+url: https://saleforecastonline.shinyapps.io/SneakerSellPrediction/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
