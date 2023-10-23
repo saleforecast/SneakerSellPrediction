@@ -35,7 +35,11 @@ httr::set_config(httr::config(http_version = 0))
 options(dplyr.summarise.inform = FALSE)
 options(dplyr.warn.conflicts = FALSE)
 
-shinyServer(function(input,output,session){
+ui <- fluidPage(
+  tags$div(id = 'forecast')       
+)
+
+server <- function(input,output,session){
   observe({
     #datf <- read_csv("C:/Users/Shafi/OneDrive/Demo/SneakerSellPrediction/Data/sneakerData.csv", col_types =  cols(.default = col_character()))
     #datf <- read_csv("https://www.dropbox.com/scl/fi/d25m2vu1qs4ff7zblrjvf/CustomerArrival.csv?rlkey=ldpzllxv3e57zph85ybgof7ch&dl=1", col_types =  cols(.default = col_character()))   
@@ -69,7 +73,9 @@ shinyServer(function(input,output,session){
   session$onSessionEnded(function() {
     stopApp()
   })
-})
+}
+
+shinyApp(ui, server)
 
 # output$photo <- renderImage({
 # list(
