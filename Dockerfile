@@ -1,7 +1,7 @@
 FROM rocker/shiny:4
 # install R packages required 
 # Change the packages list to suit your needs
-RUN R -e "install.packages(c('googlesheets4', 'httr' , 'dplyr', 'ggplot2', 'cli', 'crayon', 'expsmooth', 'fma', 'magrittr', 'purrr', 'forecast', 'rstudioapi', 'ggfortify', 'lubridate', 'memoise', 'openxlsx', 'scales', 'shiny', 'stringr', 'tibble', 'readr'), dependencies=TRUE)"
+RUN R -e "install.packages(c('googlesheets4', 'httr' , 'dplyr', 'fpp2', 'ggfortify', 'lubridate', 'memoise', 'openxlsx', 'scales', 'shiny', 'stringr', 'tibble', 'readr'), dependencies=TRUE)"
 
 WORKDIR /home/shinyusr
 COPY app.R app.R 
