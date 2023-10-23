@@ -32,7 +32,6 @@ ui <- fluidPage(
 )
 
 server <- function(input,output,session){
-  observe({
     #datf <- read_csv("C:/Users/Shafi/OneDrive/Demo/SneakerSellPrediction/Data/sneakerData.csv", col_types =  cols(.default = col_character()))
     #datf <- read_csv("https://www.dropbox.com/scl/fi/d25m2vu1qs4ff7zblrjvf/CustomerArrival.csv?rlkey=ldpzllxv3e57zph85ybgof7ch&dl=1", col_types =  cols(.default = col_character()))   
     gs4_auth(cache = ".secrets", email = "saleforecast.online@gmail.com")
@@ -61,10 +60,9 @@ server <- function(input,output,session){
                  )
       ) 
     })
-  })
-  session$onSessionEnded(function() {
-    stopApp()
-  })
+  # session$onSessionEnded(function() {
+  #   stopApp()
+  # })
 }
 
 shinyApp(ui, server)
