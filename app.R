@@ -23,7 +23,7 @@ library(stringr)
 library(tibble)
 library(readr)
 library(httr, warn.conflicts = FALSE)    
-httr::set_config(httr::config(http_version = 0))
+httr::set_config(httr::config(http_version = 2))
 options(dplyr.summarise.inform = FALSE)
 options(dplyr.warn.conflicts = FALSE)
 
@@ -60,9 +60,6 @@ server <- function(input,output,session){
                  )
       ) 
     })
-  # session$onSessionEnded(function() {
-  #   stopApp()
-  # })
 }
 
 shinyApp(ui, server)
