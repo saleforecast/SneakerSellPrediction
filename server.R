@@ -1,4 +1,5 @@
 options(shiny.maxRequestSize=30*1024^2)
+Sys.setenv(`_R_S3_METHOD_REGISTRATION_NOTE_OVERWRITES_` = "false")
 source("CommonPlot.R")
 source("DailyForecast.R")
 source("DateFormat.R")
