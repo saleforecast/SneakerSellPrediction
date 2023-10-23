@@ -35,7 +35,7 @@ server <- function(input,output,session){
   observe({
     #datf <- read_csv("C:/Users/Shafi/OneDrive/Demo/SneakerSellPrediction/Data/sneakerData.csv", col_types =  cols(.default = col_character()))
     #datf <- read_csv("https://www.dropbox.com/scl/fi/d25m2vu1qs4ff7zblrjvf/CustomerArrival.csv?rlkey=ldpzllxv3e57zph85ybgof7ch&dl=1", col_types =  cols(.default = col_character()))   
-    gs4_auth(cache = ".secrets", email = "shafiul0304034@gmail.com")
+    gs4_auth(cache = ".secrets", email = "saleforecast.online@gmail.com")
     datf <- read_sheet("https://docs.google.com/spreadsheets/d/19ZsUaiKat_MC0zHJv1cKY0G_y1E91WEna7AFIalddCo/edit#gid=0", col_types = "c")  
     #browser()
     #datf <- head(datf, 60)
