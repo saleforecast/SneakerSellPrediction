@@ -27,9 +27,6 @@ httr::set_config(httr::config(http_version = 2))
 options(dplyr.summarise.inform = FALSE)
 options(dplyr.warn.conflicts = FALSE)
 
-gs4_auth(cache = ".secrets", email = "saleforecast.online@gmail.com")
-datf <- read_sheet("https://docs.google.com/spreadsheets/d/19ZsUaiKat_MC0zHJv1cKY0G_y1E91WEna7AFIalddCo/edit#gid=0", col_types = "c")  
-
 ui <- fluidPage(
   tags$div(id = 'forecast')       
 )
@@ -37,6 +34,8 @@ ui <- fluidPage(
 server <- function(input,output,session){
     #datf <- read_csv("C:/Users/Shafi/OneDrive/Demo/SneakerSellPrediction/Data/sneakerData.csv", col_types =  cols(.default = col_character()))
     #datf <- read_csv("https://www.dropbox.com/scl/fi/d25m2vu1qs4ff7zblrjvf/CustomerArrival.csv?rlkey=ldpzllxv3e57zph85ybgof7ch&dl=1", col_types =  cols(.default = col_character()))   
+    gs4_auth(cache = ".secrets", email = "saleforecast.online@gmail.com")
+    datf <- read_sheet("https://docs.google.com/spreadsheets/d/19ZsUaiKat_MC0zHJv1cKY0G_y1E91WEna7AFIalddCo/edit#gid=0", col_types = "c")  
     #browser()
     #datf <- head(datf, 60)
     colIndicator <- findDateTimeColumnIndex(datf)
